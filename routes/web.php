@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Inertia\Inertia;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,4 +20,8 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', function() {
+    return Inertia::render('Home');
+})->name('home');
+
+Route::get('temphome', [App\Http\Controllers\TestController::class, 'index']);
