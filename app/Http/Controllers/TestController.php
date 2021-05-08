@@ -9,6 +9,6 @@ class TestController extends Controller
 {
     public function index()
     {
-        return Inertia::render('home/index');
+        return Inertia::render('home/index', ['testdata' => 'データ!']);
     }
 }
